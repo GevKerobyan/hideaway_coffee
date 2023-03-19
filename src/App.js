@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from 'react';
+import {About, Hero, Navbar, Find} from './components'
+const App = () => {
 
-function App() {
+  const aboutRef = useRef(null)
+  const findRef = useRef(null)
+
+  const handleClick = (refType) => {
+    console.log('refType =====> ', refType)
+    refType.current?.scrollIntoView({behavior: 'smooth'});
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Navbar aboutRef={aboutRef} findRef={findRef} handleClick={handleClick}/>
+      <Hero />
+      <About ref={aboutRef}/>
+      <Find ref={findRef}/>
     </div>
   );
 }
