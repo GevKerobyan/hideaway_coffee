@@ -116,6 +116,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-overflow-style: none; 
   scrollbar-width: none; 
+  background: var( --main-bg)
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 body::-webkit-scrollbar {

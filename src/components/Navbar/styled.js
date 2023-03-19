@@ -9,7 +9,7 @@ export const NavbarLayout = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background: white;
+	background: var( --main-bg);
 	z-index: 10;
 `;
 
@@ -34,6 +34,7 @@ export const NavbarLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `
 
 export const NavbarRightside = styled.div`
@@ -43,13 +44,19 @@ height: 100%;
 	justify-content: flex-start;
 	gap: 35px;
   
-  .right_child {
-		height: 100%;
+  .child_link {
+	 height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 5px;
-		cursor: pointer;
+	 cursor: pointer;
+	 transition: all 0.5s linear;
+	 transform-origin: center;
+  }
+
+  .active{
+	/* add active styling */
   }
 
 	@media (max-width: 550px) {

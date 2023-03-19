@@ -43,7 +43,7 @@ export const AboutSectionText = styled.div`
 	font-size: 18px;
 	line-height: 35px;
   vertical-align: middle;
-
+text-align: center;
 	@media (max-width: 720px) {
 		width: 100%;
 	}
