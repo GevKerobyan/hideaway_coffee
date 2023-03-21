@@ -1,14 +1,14 @@
-import {About, Hero, Navbar, Find} from './components'
-const App = () => {
+import { Navbar, Hero, About, Find } from './components';
 
-  return (
-    <div className='App'>
-      <Navbar />
-      <Hero />
-      <About />
-      <Find />
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div className='App'>
+			<Navbar />
+			<Hero />
+			<About />
+			<Find />
+		</div>
+	);
+};
 
 export default App;

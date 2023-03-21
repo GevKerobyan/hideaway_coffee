@@ -1,43 +1,36 @@
-import React from 'react'
-import { HeroLayout, HeroLayoutInfo, HeroSliderWrapper } from './styled'
+import { HeroLayout, HeroLayoutInfo, HeroSliderWrapper, CarouselImageBox } from './styled'
 
-import HeroSlider from 'hero-slider/dist/HeroSlider'
-import { Slide } from 'hero-slider'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
-import { Carousel_1, Carousel_2, Carousel_3, Carousel_4, Carousel_5, Carousel_6, Carousel_8, Carousel_9, Carousel_11, Carousel_12, Carousel_13, Carousel_14, Carousel_15 } from '../../assets'
+import { CarouselImages } from '../../utilsData';
 
 const Hero = () => {
 
-    const images = [Carousel_1, Carousel_2, Carousel_3, Carousel_4, Carousel_5, Carousel_6, Carousel_8, Carousel_9, Carousel_11, Carousel_12, Carousel_13, Carousel_14, Carousel_15]
-
-    return (
-        <HeroLayout id='hero'>
-            <HeroLayoutInfo>
-                <h1 style={{ textAlign: "center" }}>Hideaway Coffee</h1>
-                <h2>Cafe in London</h2>
-            </HeroLayoutInfo>
-            <HeroSliderWrapper>
-                <HeroSlider
-                    autoplay
-                    controller={{
-                        initialSlide: 1,
-                        slidingDuration: 500,
-                        slidingDelay: 100,
-                    }}
-                >
-                    {images.map((item, i) => {
-                        return <Slide key={i} background={{
-                            backgroundImage: item,
-                            backgroundAttachment: 'fixed'
-                        }}
-                         >
-                            
-                        </Slide>
-                    })}
-                </HeroSlider>
-            </HeroSliderWrapper>
-        </HeroLayout>
-    )
+  return (
+    <HeroLayout id='hero'>
+      <HeroLayoutInfo>
+        <h1>Hideaway Coffee</h1>
+        <h2>Cafe in London</h2>
+      </HeroLayoutInfo>
+      <HeroSliderWrapper>
+        <Carousel
+          autoPlay
+          centerMode
+          emulateTouch
+          infiniteLoop
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          swipeScrollTolerance={60}
+          centerSlidePercentage={100}
+          preventMovementUntilSwipeScrollTolerance={true}
+        >
+          {CarouselImages.map((item, i) => { return <CarouselImageBox background={item} key={i} /> })}
+        </Carousel>
+      </HeroSliderWrapper>
+    </HeroLayout>
+  )
 }
 
 export default Hero
